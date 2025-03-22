@@ -1,0 +1,4 @@
+{
+	"name": "serialized-interface-editor",
+	"references":[ "serialized-interface-runtime" ]
+}

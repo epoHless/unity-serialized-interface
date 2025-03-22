@@ -1,0 +1,11 @@
+{
+    "name": "com.epohless.serialized-interface",
+    "version": "1.0.0",
+    "displayName": "Serialized Interface",
+    "description": "Serialize interfaces in Unity Editor.",
+    "unity": "2025.1",
+    "author": {
+      "name": "epoHless",
+      "url": "https://github.com/epoHless"
+    }
+  }
