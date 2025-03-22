@@ -4,11 +4,11 @@ using UnityEngine;
 public class InterfaceReferenceUtils
 {
     static GUIStyle labelStyle;
-    
+
     public static void OnGUI( Rect position, SerializedProperty property, GUIContent label, InterfaceArgs args )
     {
         InitializeStyleIfNeeded();
-        
+
         var controlID = GUIUtility.GetControlID( FocusType.Passive ) - 1;
         var isHovering = position.Contains( Event.current.mousePosition );
         var displayString = property.objectReferenceValue == null || isHovering ? $"({args.InterfaceType.Name})" : "*";
@@ -26,19 +26,19 @@ public class InterfaceReferenceUtils
             var content = EditorGUIUtility.TrTextContent( displayString );
             var size = labelStyle.CalcSize( content );
             var labelPos = position;
-            
+
             labelPos.width = size.x + additionalLeftWidth;
+            labelPos.x += position.width - labelPos.width - 18;
             labelPos.height -= verticalIndent * 2;
             labelPos.y += verticalIndent;
-            labelPos.x += position.width - labelPos.width - 18;
             
-            labelStyle.Draw( labelPos, EditorGUIUtility.TrTextContent(displayString), controlID, DragAndDrop.activeControlID == controlID, false );
+            labelStyle.Draw( labelPos, EditorGUIUtility.TrTextContent( displayString ), controlID, DragAndDrop.activeControlID == controlID, false );
         }
     }
-    
+
     static void InitializeStyleIfNeeded()
     {
-        if (labelStyle != null) return;
+        if ( labelStyle != null ) return;
 
         var style = new GUIStyle( EditorStyles.label )
         {
