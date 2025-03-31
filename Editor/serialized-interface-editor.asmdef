@@ -1,4 +1,18 @@
 {
-	"name": "serialized-interface-editor",
-	"references":[ "serialized-interface-runtime" ]
+    "name": "serialized-interface-editor",
+    "rootNamespace": "",
+    "references": [
+        "serialized-interface-runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
